@@ -19,4 +19,8 @@ systemctl start nodeexporter.service
 
 * Copy the .env.example file to .env and edit your validator address
 * Add the script to cron, for example:
-```* * * * * /root/q-monitoring/getminedblocks.sh >> /root/q-monitoring/getminedblocks.log 2>>/root/q-monitoring/getminedblocks.err```
+
+```
+* * * * * /root/q-monitoring/getminedblocks.sh >> /root/q-monitoring/getminedblocks.log 2>>/root/q-monitoring/getminedblocks.err
+```
+
