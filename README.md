@@ -27,9 +27,13 @@ systemctl start nodeexporter.service
 * * * * * /root/q-monitoring/getminedblocks.sh >> /root/q-monitoring/getminedblocks.log 2>>/root/q-monitoring/getminedblocks.err
 ```
 
+### Prometheus Alert Rule
+expr: q_mined_blocks < 1
+
 ### Geth Metrics
 
 To enable the default Geth metrics that can be scraped normally using Prometheus.
+With these metrics you can check if your node is up/down, behind on blocks and more.
 
 ```
 nano /mainnet-public-tools/<type>/docker-compose.yaml
