@@ -36,11 +36,15 @@ nano /mainnet-public-tools/<type>/docker-compose.yaml
 ```
 
 Edit Services > Node > Entrypoint.
+```
 entrypoint: ["geth", "--metrics", "--metrics.addr", "0.0.0.0", "--metrics.port", "5054", "--datadir=/data", ...snip...
+```
 
 Edit Services > Node > Ports.
+```
 ports:
 - $EXT_PORT:$EXT_PORT/tcp
 - $EXT_PORT:$EXT_PORT/udp
 - 5054:5054/tcp
 - 5054:5054/udp
+```
