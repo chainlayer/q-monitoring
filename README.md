@@ -1,6 +1,9 @@
 ## Instructions
 
-This monitoring repo depends on node_exporter from prometheus to work
+This monitoring repo depends on node_exporter from prometheus to work. 
+It checks that you are validating blocks from data posted on https://indexer.q.org/.
+
+For other default metrics, please see the section "Geth Metrics".
 
 ### Installation
 
@@ -24,3 +27,20 @@ systemctl start nodeexporter.service
 * * * * * /root/q-monitoring/getminedblocks.sh >> /root/q-monitoring/getminedblocks.log 2>>/root/q-monitoring/getminedblocks.err
 ```
 
+### Geth Metrics
+
+To enable the default Geth metrics that can be scraped normally using Prometheus.
+
+```
+nano /mainnet-public-tools/<type>/docker-compose.yaml
+```
+
+Edit Services > Node > Entrypoint.
+entrypoint: ["geth", "--metrics", "--metrics.addr", "0.0.0.0", "--metrics.port", "5054", "--datadir=/data", ...snip...
+
+Edit Services > Node > Ports.
+ports:
+- $EXT_PORT:$EXT_PORT/tcp
+- $EXT_PORT:$EXT_PORT/udp
+- 5054:5054/tcp
+- 5054:5054/udp
