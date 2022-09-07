@@ -1,7 +1,7 @@
 ## Instructions
 
 This monitoring repo depends on node_exporter from prometheus to work. 
-It checks that you are validating blocks from data posted on https://indexer.q.org/.
+It checks that you are validating blocks on-chain, as shown from data posted on https://indexer.q.org/.
 
 For other default metrics, please see the section "Geth Metrics".
 
