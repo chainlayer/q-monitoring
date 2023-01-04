@@ -31,7 +31,7 @@ Finally make sure to enable clique on your Q fullnode with --http.api=...,clique
 Edit Services > Node > Entrypoint.
 
 ```
-entrypoint: ["geth", "--metrics", "--metrics.addr", "0.0.0.0", "--metrics.port", "5054", "--datadir=/data", ...snip... , "--http.corsdomain=*", "--http.api=net,web3,eth,debug,clique" ]
+entrypoint: ["geth", "--metrics", "--metrics.addr", "0.0.0.0", "--metrics.port", "5054", "--datadir=/data", ...snip... , "--http.corsdomain=*", "--http.api=net,web3,eth,debug,clique", "--gcmode=archive" ]
 ```
 
 ### Prometheus Alert Rule
